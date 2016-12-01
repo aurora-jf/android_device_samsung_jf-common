@@ -405,7 +405,10 @@ static char *camera_get_parameters(struct camera_device *device)
      /* Remove HDR on rear cam */
     if (id != 1) {
         _params.set(android::CameraParameters::KEY_SUPPORTED_SCENE_MODES, "auto,action,night,sunset,party");
+	ALOGV("========HDR IS HEREEEEEEEEEEEEEEE=========");
     }
+    else
+	ALOGV("========HDR IS NOT HEREEEEEEEEEEEEEEE=========");
     
      /* Enforce video-snapshot-supported to true */
     _params.set(android::CameraParameters::KEY_VIDEO_SNAPSHOT_SUPPORTED, "true");
