@@ -154,4 +154,3 @@ on property:dev.bootcomplete=1
     setprop sys.io.scheduler bfq
 
     rm /data/system/perfd/default_values
-    start mpdecision
