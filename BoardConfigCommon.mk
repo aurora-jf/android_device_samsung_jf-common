@@ -121,6 +121,10 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 28651290624
 BOARD_FLASH_BLOCK_SIZE := 131072
 TARGET_HAS_NO_MISC_PARTITION := true
 
+#TWRP
+PRODUCT_COPY_FILES += device/samsung/jf-common/twrp.fstab:recovery/root/etc/twrp.fstab
+TW_THEME := portrait_hdpi
+
 # Power
 TARGET_POWERHAL_VARIANT := qcom
 
