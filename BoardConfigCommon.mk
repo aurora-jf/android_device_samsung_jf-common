@@ -122,8 +122,27 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 TARGET_HAS_NO_MISC_PARTITION := true
 
 #TWRP
-PRODUCT_COPY_FILES += device/samsung/jf-common/twrp.fstab:recovery/root/etc/twrp.fstab
+LZMA_RAMDISK_TARGETS := recovery
 TW_THEME := portrait_hdpi
+RECOVERY_SDCARD_ON_DATA := true
+TARGET_RECOVERY_QCOM_RTC_FIX := true
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/msm_hsusb/gadget/lun%d/file"
+TW_BRIGHTNESS_PATH := "/sys/devices/platform/msm_fb.526593/leds/lcd-backlight/brightness"
+TW_MAX_BRIGHTNESS := 255
+TW_DEFAULT_BRIGHTNESS := 162
+TW_NO_REBOOT_BOOTLOADER := true
+TW_HAS_DOWNLOAD_MODE := true
+TW_NO_EXFAT_FUSE := true
+#TW_INCLUDE_NTFS_3G := true
+TW_MTP_DEVICE := "/dev/mtp_usb"
+TW_EXCLUDE_SUPERSU := true
+
+# Encryption support
+TW_INCLUDE_CRYPTO := true
+#TW_INCLUDE_CRYPTO_SAMSUNG := true
+TARGET_HW_DISK_ENCRYPTION := true
+TARGET_KEYMASTER_WAIT_FOR_QSEE := true
+#TWRP_INCLUDE_LOGCAT := true
 
 # Power
 TARGET_POWERHAL_VARIANT := qcom
