@@ -166,6 +166,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
     $(LOCAL_PATH)/configs/nfcee_access.xml:system/etc/nfcee_access.xml
 
+#TWRP
+PRODUCT_COPY_FILES += \
+    device/samsung/jf-common/twrp.fstab:recovery/root/etc/twrp.fstab
+
 PRODUCT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
 
