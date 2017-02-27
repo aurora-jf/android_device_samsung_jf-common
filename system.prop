@@ -85,3 +85,18 @@ wifi.interface=wlan0
 #Google assistant
 ro.opa.eligible_device=true
 
+#Randoms
+ro.qc.sdk.camera.facialproc=true
+ro.qc.sdk.gestures.camera=false
+ro.qc.sdk.sensors.gestures=false
+ro.qualcomm.cabl=0
+persist.sys.camera.transform=0
+persist.sys.camera.connect=0
+persist.sys.videomode=0
+ro.hdcp2.rx=tz
+ro.secwvk=144
+ro.use_data_netmgrd=true
+persist.data.netmgrd.qos.enable=false
+ril.subscription.types=NV,RUIM
+persist.rmnet.mux=disabled
+
