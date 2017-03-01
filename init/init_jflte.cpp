@@ -97,6 +97,7 @@ void vendor_load_properties()
         property_set("ro.telephony.default_network", "8");
         property_set("ro.telephony.get_imsi_from_sim", "true");
         property_set("telephony.sms.pseudo_multipart", "1");
+	property_set("telephony.lteOnGsmDevice","1");
     } else if ( bootloader.find("M919") != std::string::npos) {
         /* jfltetmo */
         gsm_properties();
