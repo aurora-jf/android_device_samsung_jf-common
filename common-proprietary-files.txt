@@ -170,10 +170,10 @@ bin/thermal-engine
 lib/libthermalclient.so
 
 # Time services
--app/TimeService/TimeService.apk
+app/TimeService/TimeService.apk
 bin/time_daemon
 lib/libTimeService.so
--vendor/lib/libtime_genoff.so
+vendor/lib/libtime_genoff.so
 
 
 # Widevine
