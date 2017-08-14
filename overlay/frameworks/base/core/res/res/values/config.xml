@@ -285,7 +285,4 @@
     <!-- If enabled, capacitive keys will only light up when pressed.
          Otherwise, the buttons will light up whenever the user interacts with the device -->
     <bool name="config_buttonLightOnKeypressOnly">true</bool>
-    
-    <!-- Keep chosen default camera app to memory-->
-    <bool name="config_pinnerCameraApp">true</bool>
 </resources>
