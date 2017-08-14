@@ -47,6 +47,9 @@ ro.vendor.extension_library=libqti-perfd-client.so
 #Power On
 ro.config.hw_quickpoweron=true
 
+# Reboot
+ro.build.shutdown_timeout=3
+
 # Radio
 persist.data.ds_fmc_app.mode=0
 persist.data_netmgrd_nint=16
