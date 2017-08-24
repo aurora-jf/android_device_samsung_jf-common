@@ -230,8 +230,9 @@ void cdma_properties(int sub,bool isSprint)
     if (!isSprint)
 	property_set("telephony.lteOnCdmaDevice", "1");
     else {
+	property_set("rild.libargs","-d /dev/smd0");
 	property_set("telephony.lteOnGsmDevice","1");
-	property_set("ro.telephony.default_network","3");
+	property_set("ro.telephony.default_network","8");
     }
     
 }
