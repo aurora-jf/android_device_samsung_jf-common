@@ -297,4 +297,7 @@
     <bool name="config_pinnerCameraApp">true</bool>
 
 
+    <!-- Enable button brightness -->
+    <bool name="config_deviceHasVariableButtonBrightness">true</bool>
+
 </resources>
