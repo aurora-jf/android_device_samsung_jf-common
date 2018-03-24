@@ -102,6 +102,11 @@ PRODUCT_PACKAGES += \
     Snap \
     camera.msm8960
 
+# Camera properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    camera2.portability.force_api=1 \
+    debug.camcorder.disablemeta=true
+
 # Display
 PRODUCT_PACKAGES += \
     copybit.msm8960 \
