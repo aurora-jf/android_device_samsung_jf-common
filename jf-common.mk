@@ -78,11 +78,11 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
-    libqcomvoiceprocessing 
+    libqcomvoiceprocessing
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/audio_effects.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.conf \
+    $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
     $(LOCAL_PATH)/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml \
     $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml
@@ -94,7 +94,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bluetooth/bcm4335_prepatch.hcd:system/vendor/firmware/prepatch/bcm4335_prepatch.hcd
 
-# Bluetooth HAL		
+# Bluetooth HAL
 PRODUCT_PACKAGES += \
     libbt-vendor \
     android.hardware.bluetooth@1.0-impl
@@ -114,7 +114,7 @@ PRODUCT_PACKAGES += \
     libqdutils \
     libqdMetaData
 
-# Doze 
+# Doze
 PRODUCT_PACKAGES += \
     SamsungDoze
 
@@ -138,7 +138,7 @@ PRODUCT_PACKAGES += \
 # IR
 PRODUCT_PACKAGES += \
     consumerir.msm8960
-    
+
 # Keylayouts
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/atmel_mxt_ts.kl:system/usr/keylayout/atmel_mxt_ts.kl \
@@ -204,7 +204,7 @@ PRODUCT_PACKAGES += \
     libOmxQcelp13Enc \
     libstagefrighthw
 
-# Default OMX service to non-Treble		
+# Default OMX service to non-Treble
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.media.treble_omx=false
 
@@ -233,7 +233,7 @@ PRODUCT_COPY_FILES += \
 # Qualcomm
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
-    
+
 # Wifi
 PRODUCT_PACKAGES += \
     libnetcmdiface \
