@@ -205,7 +205,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-impl
+    power.msm8960
 
 # Ramdisk
 PRODUCT_PACKAGES += \

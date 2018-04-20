@@ -85,6 +85,10 @@ PRODUCT_PACKAGES += \
 	android.hardware.radio@1.0 \
     android.hardware.radio.deprecated@1.0
 
+# Power HIDL
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.0-impl
+
 # Sensors HIDL
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl
