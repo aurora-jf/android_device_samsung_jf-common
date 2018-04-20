@@ -96,11 +96,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bluetooth/bcm4335_prepatch.hcd:$(TARGET_COPY_OUT_VENDOR)/firmware/prepatch/bcm4335_prepatch.hcd
 
-# Bluetooth HAL
-PRODUCT_PACKAGES += \
-    libbt-vendor \
-    android.hardware.bluetooth@1.0-impl
-
 # Camera
 PRODUCT_PACKAGES += \
     Camera2 \
