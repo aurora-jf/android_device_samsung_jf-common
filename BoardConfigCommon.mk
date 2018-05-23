@@ -23,14 +23,15 @@
 # Inherit from qcom-common
 -include device/samsung/qcom-common/BoardConfigCommon.mk
 
-TARGET_SPECIFIC_HEADER_PATH += device/samsung/jf-common/include
-# ADB
-TARGET_USES_LEGACY_ADB_INTERFACE := true
+# inherit from the proprietary version
+-include vendor/samsung/jf-common/BoardConfigVendor.mk
 
 COMMON_PATH := device/samsung/jf-common
 
-# inherit from the proprietary version
--include vendor/samsung/jf-common/BoardConfigVendor.mk
+TARGET_SPECIFIC_HEADER_PATH += $(COMMON_PATH)/include
+
+# ADB
+TARGET_USES_LEGACY_ADB_INTERFACE := true
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8960
@@ -63,7 +64,7 @@ TARGET_EXFAT_DRIVER := sdfat
 BOARD_USES_ALSA_AUDIO := true
 USE_CUSTOM_AUDIO_POLICY := 1
 BOARD_HAVE_SAMSUNG_CSDCLIENT := true
-USE_LEGACY_LOCAL_AUDIO_HAL := true 
+USE_LEGACY_LOCAL_AUDIO_HAL := true
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth
