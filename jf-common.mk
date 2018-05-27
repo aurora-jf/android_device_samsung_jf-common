@@ -232,6 +232,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
 
+# Weather providers
+PRODUCT_PACKAGES += \
+	OpenWeatherMapWeatherProvider \
+	YahooWeatherProvider \
+	WundergroundWeatherProvider
+
 # Wifi
 PRODUCT_PACKAGES += \
     libnetcmdiface \
