@@ -185,8 +185,8 @@ PRODUCT_PACKAGES += \
     com.android.nfc_extras
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/libnfc-brcm.conf:$(TARGET_COPY_OUT_VENDOR)/vendor/etc/libnfc-brcm.conf \
-    $(LOCAL_PATH)/configs/nfcee_access.xml:system/vendor/etc/nfcee_access.xml
+    $(LOCAL_PATH)/configs/libnfc-brcm.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-brcm.conf \
+    $(LOCAL_PATH)/configs/nfcee_access.xml:system/etc/nfcee_access.xml
 
 # OMX
 PRODUCT_PACKAGES += \
@@ -229,8 +229,9 @@ PRODUCT_COPY_FILES += \
 
 # Thermal
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermald-8064.conf:$(TARGET_COPY_OUT_VENDOR)/vendor/etc/thermald-8064.conf \
-    $(LOCAL_PATH)/configs/thermald-8064ab.conf:$(TARGET_COPY_OUT_VENDOR)/vendor/etc/thermald-8064ab.conf
+    $(LOCAL_PATH)/configs/thermald-8064.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermald-8064.conf \
+    $(LOCAL_PATH)/configs/thermald-8064ab.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermald-8064ab.conf \
+    $(LOCAL_PATH)/configs/thermald-8064ab.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermald.conf
 
 # Weather providers
 PRODUCT_PACKAGES += \
