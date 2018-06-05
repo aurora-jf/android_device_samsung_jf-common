@@ -232,10 +232,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermald-8064.conf:$(TARGET_COPY_OUT_VENDOR)/vendor/etc/thermald-8064.conf \
     $(LOCAL_PATH)/configs/thermald-8064ab.conf:$(TARGET_COPY_OUT_VENDOR)/vendor/etc/thermald-8064ab.conf
 
-# Qualcomm
-PRODUCT_PACKAGES += \
-    libcnefeatureconfig
-
 # Weather providers
 PRODUCT_PACKAGES += \
 	OpenWeatherMapWeatherProvider \
