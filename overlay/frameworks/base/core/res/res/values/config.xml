@@ -292,4 +292,37 @@
     radio is unable to find any MCC information to infer wifi country code from -->
     <bool translatable="false" name="config_wifi_revert_country_code_on_cellular_loss">true</bool>
 
+    <!-- Added by Buff -->
+
+    <bool name="config_button_brightness_support">true</bool>
+
+    <integer name="config_button_brightness_default">128</integer>
+
+    <!-- Enable Night display, which requires HWC 2.0. -->
+    <bool name="config_nightDisplayAvailable">true</bool>
+
+    <!-- Set this to true to enable the platform's auto-power-save modes like doze and
+         app standby.  These are not enabled by default because they require a standard
+         cloud-to-device messaging service for apps to interact correctly with the modes
+         (such as to be able to deliver an instant message to the device even when it is
+         dozing).  This should be enabled if you have such services and expect apps to
+         correctly use them when installed on your device.  Otherwise, keep this disabled
+         so that applications can still use their own mechanisms. -->
+    <bool name="config_enableAutoPowerModes">true</bool>
+
+    <!-- Operating volatage for bluetooth controller. -->
+    <integer name="config_bluetooth_operating_voltage_mv">3300</integer>
+
+    <!-- Boolean indicating if current platform supports BLE peripheral mode -->
+    <bool name="config_bluetooth_le_peripheral_mode_supported">true</bool>
+
+    <!-- Boolean indicating if current platform supports bluetooth wide band speech -->
+    <bool name="config_bluetooth_wide_band_speech">true</bool>
+
+    <!-- Boolean indicating if current platform supports HFP inband ringing -->
+    <bool name="config_bluetooth_hfp_inband_ringing_support">true</bool>
+
+    <!-- True if camera app should be pinned via Pinner Service -->
+    <bool name="config_pinnerCameraApp">true</bool>
+
 </resources>
