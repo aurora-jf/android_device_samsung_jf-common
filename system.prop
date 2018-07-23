@@ -13,6 +13,9 @@ use.voice.path.for.pcm.voip=false
 # Bluetooth
 ro.bt.bdaddr_path=/efs/bluetooth/bt_addr
 
+# Camera
+camera2.portability.force_api=1
+
 # Charger
 ro.enable_boot_charger_mode=1
 
@@ -26,15 +29,13 @@ ro.sf.lcd_density=420
 persist.gps.qc_nlp_in_use=1
 
 # Media
-#media.stagefright.legacyencoder=true
-#media.stagefright.less-secure=true
-#camera.disable_treble=true
-camera2.portability.force_api=1
 mm.enable.smoothstreaming=true
-persist.media.treble_omx=false
 
 # NFC
 ro.nfc.port=I2C
+
+# OMX properties
+persist.media.treble_omx=false
 
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
@@ -53,17 +54,14 @@ persist.radio.add_power_save=1
 persist.radio.apm_sim_not_pwdn=1
 rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so
 
-# Tethering
-net.tethering.noprovisioning=true
-
 # Time
 persist.timed.enable=true
 
 # Timeout failed shutdowns
 ro.build.shutdown_timeout=5
 
-# Vendor security patch level - guessed at build date for I9505XXUHQK1
-ro.lineage.build.vendor_security_patch=2017-11-09
+# Tethering
+net.tethering.noprovisioning=true
 
 # WiFi
 wifi.interface=wlan0

@@ -22,36 +22,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product-if-exists, vendor/samsung/jf-common/jf-common-vendor.mk)
 
 # Overlay
-DEVICE_PACKAGE_OVERLAYS += device/samsung/jf-common/overlay
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    pm.dexopt.first-boot=quicken \
-    pm.dexopt.boot=quicken \
-    pm.dexopt.install=quicken \
-    pm.dexopt.nsys-library=quicken \
-    pm.dexopt.shared-apk=quicken \
-    pm.dexopt.forced-dexopt=quicken \
-    pm.dexopt.core-app=quicken \
-    dalvik.vm.image-dex2oat-Xms=64m \
-    dalvik.vm.image-dex2oat-Xmx=64m \
-    dalvik.vm.dex2oat-Xms=64m \
-    dalvik.vm.dex2oat-Xmx=512m \
-    dalvik.vm.dex2oat-swap=false \
-    dalvik.vm.dex2oat-filter=quicken \
-    dalvik.vm.usejit=true \
-    dalvik.vm.usejitprofiles=true \
-    dalvik.vm.execution-mode=int:fast \
-    dalvik.vm.appimageformat=lz4 \
-    dalvik.vm.image-dex2oat-filter=quicken \
-    dalvik.vm.heapstartsize=16m \
-    dalvik.vm.heapgrowthlimit=256m \
-    dalvik.vm.heapsize=512m \
-    dalvik.vm.heaptargetutilization=0.75 \
-    dalvik.vm.heapminfree=4m \
-    dalvik.vm.heapmaxfree=8m \
-    debug.atrace.tags.enableflags=0 \
-    ro.dalvik.vm.native.bridge=0 \
-    ro.kernel.android.checkjni=0
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay 
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -97,6 +68,8 @@ $(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk
 
 # Audio
 PRODUCT_PACKAGES += \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio.effect@2.0-impl \
     audio.a2dp.default \
     audio.primary.msm8960 \
     audio.r_submix.default \
@@ -132,10 +105,6 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8960 \
     memtrack.msm8960
 
-#    libgenlock \
-#    libqdutils \
-#    libqdMetaData
-
 # Doze
 PRODUCT_PACKAGES += \
     SamsungDoze
@@ -149,13 +118,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf \
     $(LOCAL_PATH)/configs/sap.conf:system/etc/sap.conf
 
-# HIDL
-$(call inherit-product, $(LOCAL_PATH)/hidl.mk)
-
-# HIDL manifest
+# HIDL Manifest
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml \
-    $(LOCAL_PATH)/compatibility_matrix.xml:system/vendor/compatibility_matrix.xml
+    $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml
+
+# HIDL Makefile
+$(call inherit-product, $(LOCAL_PATH)/hidl.mk)
 
 # IPv6 tethering
 PRODUCT_PACKAGES += \
@@ -180,18 +148,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     lights.MSM8960
 
-# LEDify
-PRODUCT_COPY_FILES += \
-    vendor/jdc/prebuilt/common/bin/ledify:$(TARGET_COPY_OUT_VENDOR)/bin/ledify
-
-
-# Loki
-PRODUCT_PACKAGES += \
-    loki_tool \
-    loki.sh \
-    loki_bootloaders \
-    recovery-transform.sh
-
 # Media
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
@@ -215,8 +171,8 @@ PRODUCT_PACKAGES += \
     com.android.nfc_extras
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/libnfc-brcm.conf:system/vendor/etc/libnfc-brcm.conf \
-    $(LOCAL_PATH)/configs/nfcee_access.xml:system/vendor/etc/nfcee_access.xml
+    $(LOCAL_PATH)/configs/libnfc-brcm.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-brcm.conf \
+    $(LOCAL_PATH)/configs/nfcee_access.xml:system/etc/nfcee_access.xml
 
 # OMX
 PRODUCT_PACKAGES += \
@@ -231,10 +187,6 @@ PRODUCT_PACKAGES += \
     libOmxQcelp13Enc \
     libstagefrighthw
 
-# Default OMX service to non-Treble
-# PRODUCT_PROPERTY_OVERRIDES += \
-#    persist.media.treble_omx=false
-
 # Power
 PRODUCT_PACKAGES += \
     power.msm8960
@@ -246,8 +198,6 @@ PRODUCT_PACKAGES += \
     init.qcom.power.rc \
     init.qcom.usb.rc \
     init.recovery.qcom.rc \
-    init.spectrum.rc \
-    init.spectrum.sh \
     ueventd.qcom.rc
 
 # SPN override
@@ -264,34 +214,17 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermald-8064ab.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermald-8064ab.conf \
     $(LOCAL_PATH)/configs/thermald-8064ab.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermald.conf
 
-# Qualcomm
-PRODUCT_PACKAGES += \
-    libcnefeatureconfig
-
-
-# Weather providers
-PRODUCT_PACKAGES += \
-    OpenWeatherMapWeatherProvider \
-    YahooWeatherProvider \
-    WundergroundWeatherProvider
-
 # Wifi
 PRODUCT_PACKAGES += \
     libnetcmdiface \
     macloader \
     hostapd \
-    wificond \
-    wifilogd \
     wpa_supplicant \
     wpa_supplicant.conf
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
-
-
-# Make device completely debuggable 
-$(call inherit-product, device/samsung/jf-common/debuggable.mk)
 
 # Common Qualcomm
 $(call inherit-product, device/samsung/qcom-common/qcom-common.mk)
