@@ -65,13 +65,9 @@ BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
 
 TARGET_EXFAT_DRIVER := sdfat
 
-# Toolchain
-KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-linaro-linux-androideabi-7.2/bin
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
-
 # Audio
 BOARD_USES_ALSA_AUDIO := true
-USE_CUSTOM_AUDIO_POLICY := 1
+USE_LEGACY_AUDIO_POLICY := 1
 BOARD_HAVE_SAMSUNG_CSDCLIENT := true
 USE_LEGACY_LOCAL_AUDIO_HAL := true
 USE_XML_AUDIO_POLICY_CONF := true
